@@ -1,5 +1,5 @@
-$unitSlab: 'Unit Slab Offc Pro', 'Times New Roman'
-$gotham: 'Gotham Pro', sans-serif
+$unitSlab: '1', 'Times New Roman'
+$gotham: '2', sans-serif
 $black: #232222
 
 *
@@ -129,7 +129,7 @@ header
 .billboard__header
   width: 100%
   padding-top: 2em
-  padding-bottom: 1em
+  padding-bottom: 2em
 
 .billboard__title
   text-transform: uppercase
@@ -180,15 +180,24 @@ header
   position: relative
   margin-top: 30px
 
-.events:before
+.billboard__title--time
+  position: relative
+
+.events:before,.billboard__title--time:before
   content: ''
   display: block
   width: 20px
   height: 16px
-  background: url(../img/events.svg) no-repeat
   position: absolute
   left: -37px
   top: 3px
+
+.billboard__title--time:before
+  background: url(../img/time.svg) no-repeat
+  background-size: 100%
+
+.events:before
+  background: url(../img/events.svg) no-repeat
 
 .events__title
   margin-bottom: 15px
@@ -204,7 +213,7 @@ header
   color: #007f48
   font-size: 12px
   text-transform: uppercase
-  font-family: "Gotham Pro", sans-serif
+  font-family: "2", sans-serif
   font-weight: 500
 
 .billboard__half
@@ -238,6 +247,7 @@ header
 
 .billboard__body--forecast
   text-align: left
+  padding-top: 0
 
 .billboard__item .billboard__half:nth-of-type(2)
   display: flex

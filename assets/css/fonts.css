@@ -1,39 +1,39 @@
 @font-face {
-    font-family: 'Unit Slab Offc Pro';
-    src:    url('../fonts/UnitSlabOffcPro-LightIta.eot');
-    src:    url('../fonts/UnitSlabOffcPro-LightIta.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/UnitSlabOffcPro-LightIta.woff') format('woff'),
-            url('../fonts/UnitSlabOffcPro-LightIta.ttf') format('truetype');
+    font-family: '1';
+    src:    url('../fonts/1l.eot');
+    src:    url('../fonts/1l.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/1l.woff') format('woff'),
+            url('../fonts/1l.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Unit Slab Offc Pro';
-    src:    url('../fonts/UnitSlabOffcPro.eot');
-    src:    url('../fonts/UnitSlabOffcPro.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/UnitSlabOffcPro.woff') format('woff'),
-            url('../fonts/UnitSlabOffcPro.ttf') format('truetype');
+    font-family: '1';
+    src:    url('../fonts/1.eot');
+    src:    url('../fonts/1.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/1.woff') format('woff'),
+            url('../fonts/1.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Gotham Pro';
-    src:    url('../fonts/GothamPro.eot');
-    src:    url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/GothamPro.woff') format('woff'),
-            url('../fonts/GothamPro.ttf') format('truetype');
+    font-family: '2';
+    src:    url('../fonts/2.eot');
+    src:    url('../fonts/2.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/2.woff') format('woff'),
+            url('../fonts/2.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Gotham Pro';
-    src:    url('../fonts/GothamPro-Medium.eot');
-    src:    url('../fonts/GothamPro-Medium.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/GothamPro-Medium.woff') format('woff'),
-            url('../fonts/GothamPro-Medium.ttf') format('truetype');
+    font-family: '2';
+    src:    url('../fonts/2m.eot');
+    src:    url('../fonts/2m.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/2m.woff') format('woff'),
+            url('../fonts/2m.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
