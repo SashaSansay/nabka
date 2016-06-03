@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>На набе</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="build/css/production.min.css">
+</head>
+<body>
+    <div class="rek">
+        <div class="rek__inner">
+            <img src="build/img/rekl-wide.png" alt="REKLAMA" class="rek__img">
+        </div>
+    </div>
+    <header class="header--main">
+        <div class="header__inner">
+            <ul class="menu menu--left">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">События</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Статьи</a>
+                </li>
+            </ul>
+            <a href="/" class="logo">
+                <img src="build/img/logo.svg" alt="На набе" class="logo__img">
+            </a>
+            <ul class="menu menu--right">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Карта</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Переправа</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="billboard">
+        <div class="billboard__item billboard__item--forecast" style="background-color: #f7f7f7;">
+            <div class="billboard__wrap">
+                <div class="billboard__header">
+                    <div class="billboard__inner">
+                        <div class="billboard__title">
+                            набережная Live
+                        </div>
+                        <div class="billboard__subtitle">
+                            Пятница, 27 мая
+                        </div>
+                    </div>
+                </div>
+                <div class="billboard__body billboard__body--forecast">
+                    <div class="billboard__inner billboard__inner--bottom">
+                        <div class="forecast">
+                            <div class="forecast__item">
+                                <img src="build/img/forecast.solar.png" alt="Погода в Самаре" class="forecast__image">
+                                <div class="forecast__temp">
+                                    +24 °C
+                                </div>
+                                <div class="forecast__decr">
+                                    Переменная<br>
+                                    облачность
+                                </div>
+                            </div>
+                            <div class="forecast__item">
+                                <img src="build/img/forecast.water.svg" alt="Погода в Самаре" class="forecast__image">
+                                <div class="forecast__temp">
+                                    +14 °C
+                                </div>
+                                <div class="forecast__decr">
+                                    Температура<br>
+                                    воды
+                                </div>
+                            </div>
+                        </div>
+                        <div class="events">
+                            <div class="events__title">
+                                Ближайщие события
+                            </div>
+                            <div class="events__item">
+                                <span class="events__green">
+                                    Сб 06.06.16   10:00 — 16:00
+                                </span>
+                                Открывается
+                                летний Kin-Up пляж
+                            </div>
+                            <div class="events__item">
+                                <span class="events__green">
+                                    Сб 06.06.16   10:00 — 16:00
+                                </span>
+                                Открывается
+                                летний Kin-Up пляж
+                            </div>
+                            <div class="events__item">
+                                <span class="events__green">
+                                    Сб 06.06.16   10:00 — 16:00
+                                </span>
+                                Открывается
+                                летний Kin-Up пляж
+                            </div>
+                            <div class="events__item">
+                                <span class="events__green">
+                                    Сб 06.06.16   10:00 — 16:00
+                                </span>
+                                Открывается
+                                летний Kin-Up пляж
+                            </div>
+                            <div class="events__item">
+                                <span class="events__green">
+                                    Сб 06.06.16   10:00 — 16:00
+                                </span>
+                                Открывается
+                                летний Kin-Up пляж
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="billboard__item billboard__item--half" style="background-color: #f7e165;">
+            <div class="billboard__wrap">
+                <div class="billboard__image-wrap">
+                    <img src="build/img/ex.1.jpg" alt="" class="billboard__half-image">
+                </div>
+                <div class="billboard__body">
+                    <h3 class="billboard__big-title">
+                        <a href="#" class="billboard__link-title">
+                            Фестиваль набережных:<br>
+                            гид по фестивалю<br>
+                            Как и где?
+                        </a>
+                    </h3>
+                </div>
+                <div class="billboard__bottom">
+                    <a href="#" class="billboard__bottom-link">Статьи</a>
+                </div>
+            </div>
+        </div>
+        <div class="billboard__item" style="background-color: #ffcc99;">
+            <div class="billboard__wrap">
+                <div class="billboard__top">
+                    <div class="billboard__top-wrap">
+                        средний чек <span class="billboard__divider">|</span> 300₽—600₽
+                    </div>
+                </div>
+                <div class="billboard__body">
+                    <img src="assets/img/ex.3.svg" class="billboard__card-image" alt="">
+                    <h3 class="billboard__big-title">
+                        <a href="#" class="billboard__link-title">
+                            Свежий лимонад<br>
+                            на пляже набки
+                        </a>
+                    </h3>
+                    <div class="billboard__material-refresh">
+                        материал обновляется
+                    </div>
+                </div>
+                <div class="billboard__bottom">
+                    <a href="#" class="billboard__bottom-link">места</a>
+                </div>
+            </div>
+        </div>
+        <div class="billboard__item">
+            <div class="billboard__wrap">
+                <div class="map" id="main-map">
+                </div>
+            </div>
+        </div>
+        <div class="billboard__item" style="background-color: #fff;">
+            <div class="billboard__wrap">
+                <div class="billboard__header">
+                    <div class="billboard__inner billboard__inner--two">
+                        <div class="billboard__title">
+                            Перепарава
+                        </div>
+                        <div class="billboard__subtitle">
+                            Маршруты и время
+                        </div>
+                    </div>
+                </div>
+                <div class="billboard__body billboard__body--time">
+                    <div class="billboard__time-half">
+                        <div class="time-half__inner">
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="billboard__time-half">
+                        <div class="time-half__inner">
+
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                            <div class="time">
+                                <div class="time__title">
+                                    Речной вокзал — Рождествено
+                                </div>
+                                <span class="time__gray">
+                                    теплоход
+                                </span>
+                                <div class="time__date">
+                                    08:00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCheN4Tubg-Pe3qf7QwITpCHq9lHH1t658&sensor=false&extension=.js'></script>
+    <script src="build/js/production.min.js"></script>
+</body>
+</html>

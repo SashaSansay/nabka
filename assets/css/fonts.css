@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Unit Slab Offc Pro';
+    src:    url('../fonts/UnitSlabOffcPro-LightIta.eot');
+    src:    url('../fonts/UnitSlabOffcPro-LightIta.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/UnitSlabOffcPro-LightIta.woff') format('woff'),
+            url('../fonts/UnitSlabOffcPro-LightIta.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Unit Slab Offc Pro';
+    src:    url('../fonts/UnitSlabOffcPro.eot');
+    src:    url('../fonts/UnitSlabOffcPro.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/UnitSlabOffcPro.woff') format('woff'),
+            url('../fonts/UnitSlabOffcPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src:    url('../fonts/GothamPro.eot');
+    src:    url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/GothamPro.woff') format('woff'),
+            url('../fonts/GothamPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src:    url('../fonts/GothamPro-Medium.eot');
+    src:    url('../fonts/GothamPro-Medium.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/GothamPro-Medium.woff') format('woff'),
+            url('../fonts/GothamPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

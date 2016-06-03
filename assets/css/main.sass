@@ -1,0 +1,388 @@
+$unitSlab: 'Unit Slab Offc Pro', 'Times New Roman'
+$gotham: 'Gotham Pro', sans-serif
+$black: #232222
+
+*
+  box-sizing: border-box
+
+*:before,
+*:after
+  box-sizing: border-box
+
+.billboard:after,.forecast:after
+  content: ''
+  display: block
+  clear: both
+
+a
+  color: $black
+  text-decoration: none
+
+body
+  background: #f7f7f7
+  font-size: 16px
+  line-height: 1.5
+  font-family: $unitSlab
+  color: $black
+
+h1,h2,h3,h4,h5,h6,p
+  line-height: 1.45
+
+h1
+  font-size: 4em
+
+h2
+  font-size: 3em
+
+h3
+  font-size: 2em
+
+h4
+  font-size: 1.5em
+
+h5
+  font-size: 1.25em
+
+.rek__inner
+  max-width: 1200px
+  width: 100%
+  padding: 10px 0
+  margin: 0 auto
+
+.rek__img
+  width: 100%
+  display: block
+
+.header__inner
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 120px
+
+header
+  background: #fff
+
+.menu__item
+  display: inline-block
+  font-family: $gotham
+  font-weight: 500
+  text-transform: uppercase
+  font-size: 1em
+
+.menu--left
+  text-align: left
+
+.menu--right
+  text-align: right
+
+.menu--left .menu__item
+  margin-right: 4.1vw
+
+.menu--left .menu__item:last-of-type
+  margin-right: 5.5vw
+
+.menu--right .menu__item
+  margin-left: 4.1vw
+
+.menu--right .menu__item:first-of-type
+  margin-left: 5.5vw
+
+
+.logo__img
+  width: 166px
+  height: 77px
+  position: relative
+  top: 3px
+
+
+.billboard__item
+  width: 33.3333%
+  float: left
+  position: relative
+
+.billboard__item:before
+  content: ''
+  display: block
+  padding-top: 100%
+
+.billboard__item:nth-of-type(5)
+  width: 66.6666%
+
+.billboard__item:nth-of-type(5):before
+  padding-top: 50%
+
+.billboard__inner
+  padding: 0 1em
+  width: 75%
+  margin: 0 auto
+
+.billboard__inner--bottom
+  margin-bottom: 8.3%
+
+.billboard__inner--two
+  width: 100%
+  padding-left: 5em
+
+.billboard__header
+  width: 100%
+  padding-top: 2em
+  padding-bottom: 1em
+
+.billboard__title
+  text-transform: uppercase
+  font-family: $gotham
+  font-weight: 500
+  font-size: 14px
+  letter-spacing: 0.005em
+
+.billboard__subtitle
+  font-family: $unitSlab
+  font-size: 18px
+  letter-spacing: 0.001em
+
+.forecast__item
+  float: left
+  width: 50%
+  position: relative
+  overflow: hidden
+
+.forecast__image
+  position: absolute
+  left: -12px
+  top: 13px
+  transform: translate(-100%,-50%)
+
+.forecast__temp
+  font-size: 21px
+  font-family: $unitSlab
+
+.forecast__decr
+  color: rgba(35, 34, 34, 0.7)
+  font-size: 13px
+  line-height: 15px
+
+.billboard__wrap
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+
+.events
+  position: relative
+  margin-top: 30px
+
+.events:before
+  content: ''
+  display: block
+  width: 20px
+  height: 16px
+  background: url(../img/events.svg) no-repeat
+  position: absolute
+  left: -37px
+  top: 3px
+
+.events__title
+  margin-bottom: 15px
+  text-transform: uppercase
+  font-size: 12px
+  font-family: $gotham
+  font-weight: 500
+
+.events__item + .events__item
+  margin-top: 15px
+
+.events__green
+  color: #007f48
+  font-size: 12px
+  text-transform: uppercase
+  font-family: "Gotham Pro", sans-serif
+  font-weight: 500
+
+.billboard__half
+  height: 50%
+  width: 100%
+  text-align: center
+
+.billboard .billboard__half:nth-of-type(1)
+  overflow: hidden
+  position: relative
+
+.billboard__image-wrap
+  max-height: 50%
+  height: auto
+  width: 100%
+  background-size: cover
+  background-position: center
+  overflow: hidden
+
+.billboard__half-image
+  width: 100%
+
+.billboard__item--half
+  text-align: center
+
+.billboard__body
+  height: auto
+  text-align: center
+  width: 100%
+  padding: 5% 0
+
+.billboard__body--forecast
+  text-align: left
+
+.billboard__item .billboard__half:nth-of-type(2)
+  display: flex
+  position: relative
+  justify-content: center
+  align-items: center
+  padding: 0 40px
+
+.billboard__bottom
+  bottom: 8.3%
+  left: 0
+  width: 100%
+  text-align: center
+  font-size: 11px
+  text-transform: uppercase
+  font-family: $gotham
+  color: rgba(35, 34, 34, 0.61)
+  font-weight: 500
+  position: relative
+
+.billboard__top
+  text-align: center
+  font-size: 0.6875em
+  text-transform: uppercase
+  font-family: $gotham
+  color: rgba(35, 34, 34, 0.61)
+  font-weight: 500
+  width: 100%
+
+.billboard__bottom-link
+  font-size: 11px
+  text-transform: uppercase
+  font-family: $gotham
+  color: rgba(35, 34, 34, 0.61)
+  font-weight: 500
+  padding: 1% 0 4.3333%
+  display: block
+
+.billboard__top-wrap
+  padding: 4.3333% 0 1%
+  width: 100%
+
+.billboard__big-title
+  font-size: 2em
+
+.billboard__divider
+  opacity: .6
+
+.billboard__wrap--full
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  text-align: center
+
+.billboard__material-refresh
+  font-size: 11px
+  font-family: $gotham
+  font-weight: 500
+  color: rgba(35, 34, 34, 0.4)
+  text-transform: uppercase
+  margin-top: 10px
+
+.billboard__material-refresh:before
+  content: '●'
+  color: #f00000
+
+.mCustomScrollBox
+  width: 100%
+
+.billboard__card-image
+  margin-bottom: 1em
+
+.map
+  width: 100%
+  height: 100%
+  min-height: 25em
+
+.billboard__body--time
+  text-align: left
+  padding: 0
+  flex: 1
+  display: flex
+
+.billboard__body--time:after
+  content: ''
+  display: block
+  clear: both
+
+.billboard__time-half:nth-of-type(1)
+  background: #f7f7f7
+
+.billboard__time-half:nth-of-type(2)
+  background: #eef3f7
+
+.billboard__time-half
+  width: 50%
+  position: relative
+
+.time-half__inner
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  height: 100%
+
+.billboard__item:nth-of-type(5) .billboard__wrap
+  align-content: stretch
+
+.time
+  padding: 0em 2em 2em 5em
+  position: relative
+  line-height: 1
+
+.time__title
+  font-size: 1.125em
+
+.time__date
+  position: absolute
+  right: 2em
+  top: 0
+
+.time__gray
+  color: rgba(35, 34, 34, 0.61)
+  font-size: 0.75em
+
+.time:first-of-type
+  padding-top: 2em
+
+.time:first-of-type .time__date
+  top: 2em
+
+
+
+@media screen and (max-width: 960px)
+  .billboard__item
+    width: 50%
+  .billboard__item:nth-of-type(5)
+    width: 100%
+
+@media screen and (max-width: 840px)
+  .billboard__item
+    width: 100%
+  .billboard__item:before
+    display: none
+  .billboard__wrap
+    position: relative
