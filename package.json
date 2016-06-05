@@ -12,6 +12,7 @@
     "gulp-sass": "latest",
     "gulp-rename" : "latest",
     "gulp-uglify": "latest",
+    "gulp-util"  : "latest",
     "matter-js" : "latest",
     "fastclick" : "latest",
     "hamburgers" : "latest",

@@ -2,6 +2,54 @@ window.addEventListener('load', function() {
     new FastClick(document.body);
 }, false);
 
+var eyesWatch = (function($) {
+    return {
+        init: function() {
+            this.bindUIElements();
+            this.watchMouseMove();
+        },
+
+        bindUIElements: function() {
+            this.ui = {
+                eyes: $('.eye-container'),
+                html: $('.billboard__item')
+            }
+        },
+
+        watchMouseMove: function() {
+
+            var top = this.ui.eyes.offset().top,
+                left = this.ui.eyes.offset().left,
+                height = this.ui.eyes.height(),
+                width = this.ui.eyes.width(),
+                self = this;
+
+            this.ui.html.on('mousemove', function(e) {
+
+                var className = '';
+
+                if (e.pageY > top + height) {
+                    className += 's';
+                } else if (e.pageY < top) {
+                    className += 'n';
+                }
+
+                if (e.pageX > left + width) {
+                    className += 'e';
+                } else if (e.pageX < left) {
+                    className += 'w';
+                }
+                className += ' eye-container ';
+
+                self.ui.eyes.attr('class', className);
+                e.stopPropagation();
+
+            });
+        }
+    }
+})(jQuery);
+
+
 $(function(){
     $('.billboard__item--forecast .billboard__wrap,.time-half__inner').mCustomScrollbar({
         theme : "minimal-dark",
@@ -10,11 +58,12 @@ $(function(){
     });
     $('body').flowtype({
         minimum   : 320,
-        maximum   : 1400,
-        minFont   : 12,
-        maxFont   : 16,
-        fontRatio : 70
+        minFont   : 14,
+        maxFont   : 20  ,
+        fontRatio : 80
     });
+
+    eyesWatch.init();
 });
 
 

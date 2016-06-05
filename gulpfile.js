@@ -6,6 +6,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     uglify = require('gulp-uglify'), // Минификация JS
     rename = require('gulp-rename'), // Минификация JS
     imageop = require('gulp-image-optimization'),
+    gutil = require('gulp-util'),
     concat = require('gulp-concat'); // Склейка файлов
 
 gulp.task('sass',function(){
@@ -62,7 +63,7 @@ gulp.task('concatjs',function(){
 gulp.task('buildjs',function(){
     //gulp.src(['./assets/js/jquery-2.1.4.min.js','./assets/js/ScrollMagic.min.js','./assets/js/TweenMax.min.js','./assets/js/animation.gsap.min.js','./assets/js/modernizr-custom.js','./assets/js/main.js'])
     gulp.src(['./assets/js/main.js'])
-        .pipe(uglify())
+        .pipe(uglify().on('error', gutil.log))
         .pipe(rename('main.min.js'))
         .pipe(gulp.dest('./assets/js'))
 });
