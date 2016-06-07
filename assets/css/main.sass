@@ -1,6 +1,5 @@
-$unitSlab: '1', 'Times New Roman'
-$gotham: '2', sans-serif
-$black: #232222
+@import 'vars'
+@import 'header'
 
 .mCSB_outside+.mCS-minimal-dark.mCSB_scrollTools_vertical, .mCSB_outside+.mCS-minimal.mCSB_scrollTools_vertical
   opacity: 1
@@ -50,50 +49,6 @@ h5
 .rek__img
   width: 100%
   display: block
-
-.header__inner
-  width: 100%
-  max-width: 1200px
-  margin: 0 auto
-  display: flex
-  justify-content: center
-  align-items: center
-  height: 120px
-
-header
-  background: #fff
-
-.menu__item
-  display: inline-block
-  font-family: $gotham
-  font-weight: 500
-  text-transform: uppercase
-  font-size: 1em
-
-.menu--left
-  text-align: left
-
-.menu--right
-  text-align: right
-
-.menu--left .menu__item
-  margin-right: 4.1vw
-
-.menu--left .menu__item:last-of-type
-  margin-right: 5.5vw
-
-.menu--right .menu__item
-  margin-left: 4.1vw
-
-.menu--right .menu__item:first-of-type
-  margin-left: 5.5vw
-
-
-.logo__img
-  width: 145px
-  height: 67px
-  position: relative
-  top: 3px
 
 .billboard
   display: flex
@@ -646,23 +601,6 @@ header
     width: 100%
   .subscribe__left,.subscribe__center,.subscribe__right
     width: 100%
-  .header__inner
-    flex-wrap: wrap
-  .menu--left,.menu--right
-    width: 100%
-    text-align: center
-  .menu--left .menu__item
-    margin-right: 0
-  .menu--left .menu__item + .menu__item
-    margin-left: 4.1vw
-  .menu--right .menu__item
-    margin-left: 0
-  .menu--right .menu__item + .menu__item
-    margin-left: 4.1vw
-  .menu--right .menu__item:first-of-type
-    margin-left: 0
-  .menu--left .menu__item:last-of-type
-    margin-right: 0
   .subscribe__left
     padding-bottom: 1.5625em
   .subscribe__right

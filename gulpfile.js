@@ -20,18 +20,34 @@ gulp.task('sass',function(){
 });
 gulp.task('concatcss',function(){
     gulp.src([
-        './assets/css/normalize.css',
-        './assets/css/fonts.css',
-        'node_modules/hamburgers/dist/hamburgers.min.css',
-        'node_modules/magnific-popup/dist/magnific-popup.css',
-        'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
-        './assets/css/main.css'
-    ])
+            './assets/css/normalize.css',
+            './assets/css/fonts.css',
+            'node_modules/hamburgers/dist/hamburgers.min.css',
+            'node_modules/magnific-popup/dist/magnific-popup.css',
+            'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+            './assets/css/main.css'
+        ])
         .pipe(autoprefixer({
             browsers: ['last 10 versions'],
             cascade: false
         }))
-        .pipe(concat('production.min.css'))
+        .pipe(concat('production.main.min.css'))
+        .pipe(csso())
+        .pipe(gulp.dest('./build/css'));
+
+    gulp.src([
+            './assets/css/normalize.css',
+            './assets/css/fonts.css',
+            'node_modules/hamburgers/dist/hamburgers.min.css',
+            'node_modules/magnific-popup/dist/magnific-popup.css',
+            'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+            './assets/css/page.css'
+        ])
+        .pipe(autoprefixer({
+            browsers: ['last 10 versions'],
+            cascade: false
+        }))
+        .pipe(concat('production.page.min.css'))
         .pipe(csso())
         .pipe(gulp.dest('./build/css'));
 });
