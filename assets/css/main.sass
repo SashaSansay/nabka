@@ -125,6 +125,7 @@ header
 .billboard__inner--two
   width: 100%
   padding-left: 5em
+  padding-right: 2em
 
 .billboard__header
   width: 100%
@@ -208,6 +209,9 @@ header
   font-size: 0.75em
   font-family: $gotham
   font-weight: 500
+
+.events__item
+  display: block
 
 .events__item + .events__item
   margin-top: 15px
@@ -402,11 +406,10 @@ header
   text-transform: uppercase
   color: rgba(35, 34, 34, .6)
   font-size: 0.6875em
-  border: 2px solid rgba(35, 34, 34, .3)
+  border: 1px solid rgba(35, 34, 34, .3)
   border-radius: 30px
   font-family: $gotham
-  height: 1.75em
-  padding: 0 .5em
+  padding: .1em .5em
   font-weight: 500
   display: inline-block
 
@@ -664,3 +667,9 @@ header
     padding-bottom: 1.5625em
   .subscribe__right
     padding-top: 1.5625em
+  .map, .billboard__wrap, .billboard__item
+    min-height: 100vw
+  .billboard__image-wrap
+    max-height: 50vw
+  .billboard__image-wrap--full
+    max-height: 100vw

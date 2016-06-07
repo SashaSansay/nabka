@@ -2,52 +2,40 @@ window.addEventListener('load', function() {
     new FastClick(document.body);
 }, false);
 
-var eyesWatch = (function($) {
-    return {
-        init: function() {
-            this.bindUIElements();
-            this.watchMouseMove();
-        },
-
-        bindUIElements: function() {
-            this.ui = {
-                eyes: $('.eye-container'),
-                html: $('.billboard__item')
-            }
-        },
-
-        watchMouseMove: function() {
-
-            var top = this.ui.eyes.offset().top,
-                left = this.ui.eyes.offset().left,
-                height = this.ui.eyes.height(),
-                width = this.ui.eyes.width(),
-                self = this;
-
-            this.ui.html.on('mousemove', function(e) {
-
-                var className = '';
-
-                if (e.pageY > top + height) {
-                    className += 's';
-                } else if (e.pageY < top) {
-                    className += 'n';
-                }
-
-                if (e.pageX > left + width) {
-                    className += 'e';
-                } else if (e.pageX < left) {
-                    className += 'w';
-                }
-                className += ' eye-container ';
-
-                self.ui.eyes.attr('class', className);
-                e.stopPropagation();
-
-            });
+$.fn.eyes = function(){
+    return this.each(function(){
+        var self = this;
+        var eye = $('.eye-container',this);
+        if(eye.length==0){
+            return;
         }
-    }
-})(jQuery);
+        $(self).on('mousemove', function(e) {
+            var top =       eye.offset().top,
+                left =      eye.offset().left,
+                height =    eye.height(),
+                width =     eye.width();
+
+            var className = '';
+
+            if (e.pageY > top + height) {
+                className += 's';
+            } else if (e.pageY < top) {
+                className += 'n';
+            }
+
+            if (e.pageX > left + width) {
+                className += 'e';
+            } else if (e.pageX < left) {
+                className += 'w';
+            }
+            className += ' eye-container ';
+
+            eye.attr('class', className);
+            e.stopPropagation();
+        });
+        return $(self);
+    });
+};
 
 
 $(function(){
@@ -63,7 +51,9 @@ $(function(){
         fontRatio : 80
     });
 
-    eyesWatch.init();
+    $('.billboard__item').eyes();
+
+    //eyesWatch.init();
 });
 
 
