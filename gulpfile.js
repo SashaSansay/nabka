@@ -10,7 +10,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     concat = require('gulp-concat'); // Склейка файлов
 
 gulp.task('sass',function(){
-    gulp.src('./assets/css/*.sass')
+    gulp.src(['./assets/css/main.sass','./assets/css/page.sass'])
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
@@ -60,20 +60,36 @@ gulp.task('copy',function(){
 
 gulp.task('concatjs',function(){
     gulp.src([
-        'node_modules/jquery/dist/jquery.min.js',
-        './assets/js/flowtype.js',
-        //'./assets/js/fittext.js',
-        'node_modules/fastclick/lib/fastclick.js',
-        'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
-        './assets/js/three.min.js',
-        './assets/js/detector.js',
-        './assets/js/parallaxshader.js',
-        './assets/js/vivus.js',
-        './assets/js/jquery-ui.min.js',
-        './assets/js/main.min.js'
-    ])
+            'node_modules/jquery/dist/jquery.min.js',
+            './assets/js/flowtype.js',
+            //'./assets/js/fittext.js',
+            'node_modules/fastclick/lib/fastclick.js',
+            'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
+            './assets/js/three.min.js',
+            './assets/js/detector.js',
+            './assets/js/parallaxshader.js',
+            './assets/js/vivus.js',
+            './assets/js/jquery-ui.min.js',
+            './assets/js/main.min.js'
+        ])
         //gulp.src(['./assets/js/jquery-2.1.4.min.js','./assets/js/modernizr-custom.js','./assets/js/main.js'])
         .pipe(concat('production.min.js'))
+        .pipe(gulp.dest('./build/js'));
+    gulp.src([
+            'node_modules/jquery/dist/jquery.min.js',
+            './assets/js/flowtype.js',
+            //'./assets/js/fittext.js',
+            'node_modules/fastclick/lib/fastclick.js',
+            'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
+            './assets/js/three.min.js',
+            './assets/js/detector.js',
+            './assets/js/parallaxshader.js',
+            './assets/js/vivus.js',
+            './assets/js/jquery-ui.min.js',
+            './assets/js/main.page.min.js'
+        ])
+        //gulp.src(['./assets/js/jquery-2.1.4.min.js','./assets/js/modernizr-custom.js','./assets/js/main.js'])
+        .pipe(concat('production.page.min.js'))
         .pipe(gulp.dest('./build/js'))
 });
 gulp.task('buildjs',function(){
@@ -81,6 +97,10 @@ gulp.task('buildjs',function(){
     gulp.src(['./assets/js/main.js'])
         .pipe(uglify().on('error', gutil.log))
         .pipe(rename('main.min.js'))
+        .pipe(gulp.dest('./assets/js'));
+    gulp.src(['./assets/js/main.*.js'])
+        .pipe(uglify().on('error', gutil.log))
+        .pipe(rename('main.page.min.js'))
         .pipe(gulp.dest('./assets/js'))
 });
 gulp.task('images',function(){
@@ -99,7 +119,7 @@ gulp.task('images',function(){
 });
 
 gulp.task('watch',function(){
-    gulp.watch('./assets/css/*',['sass','css']);
+    gulp.watch('./assets/css/*.sass',['sass','css']);
     //gulp.watch('./assets/js/*.js',['js']);
 });
 

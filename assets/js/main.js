@@ -56,6 +56,8 @@ $(function(){
     //eyesWatch.init();
 });
 
+$('.fb-like').attr('data-href',window.location);
+
 
 google.maps.event.addDomListener(window, 'load', init);
 var map;
