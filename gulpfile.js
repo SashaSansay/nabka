@@ -10,7 +10,7 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     concat = require('gulp-concat'); // Склейка файлов
 
 gulp.task('sass',function(){
-    gulp.src(['./assets/css/main.sass','./assets/css/page.sass'])
+    gulp.src(['./assets/css/main.sass','./assets/css/page.sass','./assets/css/event.sass','./assets/css/map.sass'])
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
@@ -48,6 +48,21 @@ gulp.task('concatcss',function(){
             cascade: false
         }))
         .pipe(concat('production.page.min.css'))
+        .pipe(csso())
+        .pipe(gulp.dest('./build/css'));
+    gulp.src([
+            './assets/css/normalize.css',
+            './assets/css/fonts.css',
+            'node_modules/hamburgers/dist/hamburgers.min.css',
+            'node_modules/magnific-popup/dist/magnific-popup.css',
+            'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+            './assets/css/event.css'
+        ])
+        .pipe(autoprefixer({
+            browsers: ['last 10 versions'],
+            cascade: false
+        }))
+        .pipe(concat('production.event.min.css'))
         .pipe(csso())
         .pipe(gulp.dest('./build/css'));
 });
