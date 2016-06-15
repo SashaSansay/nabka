@@ -16,7 +16,8 @@
     "matter-js" : "latest",
     "fastclick" : "latest",
     "hamburgers" : "latest",
-    "malihu-custom-scrollbar-plugin" : "latest"
+    "malihu-custom-scrollbar-plugin" : "latest",
+    "run-sequence" : "latest"
   },
   "devDependencies": {
     "gulp": "latest",
