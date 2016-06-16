@@ -58,6 +58,47 @@ header
   width: 100%
   display: block
 
+.hamburger
+  display: none
+  padding: 0
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+  width: 2em
+  height: 0.2em
+
+.hamburger-inner:before
+  top: -.5em
+
+.hamburger-inner:after
+  bottom: -.5em
+
+.hamburger-box
+  width: 2em
+  height: 1.2em
+
+html
+  background: #232222
+
+.offcanvas
+  background: #232222
+  position: fixed
+  left: 100%
+  top: 0
+  transition: all .4s ease
+  width: 15em
+  z-index: 9
+  padding-top: 2em
+
+.menu--offcanvas .menu__item
+  display: block
+  text-align: center
+  line-height: 3.5
+
+.menu--offcanvas .menu__link
+  color: #fff
+
+body
+  transition: transform .4s ease
 
 @media screen and (max-width: 840px)
   .header__inner
@@ -77,3 +118,13 @@ header
     margin-left: 0
   .menu--left .menu__item:last-of-type
     margin-right: 0
+  .menu--left,.menu--right
+    display: none
+  .hamburger
+    display: block
+  .header__inner
+    justify-content: space-between
+  .header--main
+    padding: 0 5em
+  body.body--menu-opened
+    transform: translate(-15em, 0)

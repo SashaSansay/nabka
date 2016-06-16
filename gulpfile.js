@@ -11,7 +11,13 @@ var gulp = require('gulp'), // Сообственно Gulp JS
     concat = require('gulp-concat'); // Склейка файлов
 
 gulp.task('sass',function(){
-    gulp.src(['./assets/css/main.sass','./assets/css/page.sass','./assets/css/event.sass','./assets/css/map.sass'])
+    gulp.src([
+        './assets/css/main.sass',
+        './assets/css/page.sass',
+        './assets/css/event.sass',
+        './assets/css/map.sass',
+        './assets/css/society.sass'
+    ])
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
@@ -80,6 +86,21 @@ gulp.task('concatcss',['sass'], function(){
         .pipe(concat('production.map.min.css'))
         .pipe(csso())
         .pipe(gulp.dest('./build/css'));
+    gulp.src([
+            './assets/css/normalize.css',
+            './assets/css/fonts.css',
+            'node_modules/hamburgers/dist/hamburgers.min.css',
+            'node_modules/magnific-popup/dist/magnific-popup.css',
+            'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+            './assets/css/society.css'
+        ])
+        .pipe(autoprefixer({
+            browsers: ['last 10 versions'],
+            cascade: false
+        }))
+        .pipe(concat('production.society.min.css'))
+        .pipe(csso())
+        .pipe(gulp.dest('./build/css'));
 });
 gulp.task('copy',function(){
     gulp.src('./assets/fonts/*')
@@ -94,7 +115,7 @@ gulp.task('buildjs',function(){
         .pipe(uglify().on('error', gutil.log))
         .pipe(rename('main.min.js'))
         .pipe(gulp.dest('./assets/js'));
-    gulp.src(['./assets/js/main.*.js','!./assets/js/main.*.min.js','!./assets/js/main.min.js'])
+    gulp.src(['./assets/js/main.*.js','./assets/js/hamburger.js','!./assets/js/main.*.min.js','!./assets/js/main.min.js'])
         .pipe(uglify().on('error', gutil.log))
         .pipe(rename(function(path){
             path.basename += '.min';
@@ -116,6 +137,7 @@ gulp.task('concatjs',['buildjs'], function(){
             './assets/js/parallaxshader.js',
             './assets/js/vivus.js',
             './assets/js/jquery-ui.min.js',
+            './assets/js/hamburger.js',
             './assets/js/main.min.js'
         ])
         //gulp.src(['./assets/js/jquery-2.1.4.min.js','./assets/js/modernizr-custom.js','./assets/js/main.js'])
@@ -132,6 +154,7 @@ gulp.task('concatjs',['buildjs'], function(){
             './assets/js/parallaxshader.js',
             './assets/js/vivus.js',
             './assets/js/jquery-ui.min.js',
+            './assets/js/hamburger.js',
             './assets/js/main.page.min.js'
         ])
         //gulp.src(['./assets/js/jquery-2.1.4.min.js','./assets/js/modernizr-custom.js','./assets/js/main.js'])
@@ -143,6 +166,7 @@ gulp.task('concatjs',['buildjs'], function(){
             //'./assets/js/fittext.js',
             'node_modules/fastclick/lib/fastclick.js',
             './assets/js/jquery-ui.min.js',
+            './assets/js/hamburger.js',
             './assets/js/main.event.min.js'
         ])
         .pipe(concat('production.event.min.js'))
@@ -153,9 +177,21 @@ gulp.task('concatjs',['buildjs'], function(){
             //'./assets/js/fittext.js',
             'node_modules/fastclick/lib/fastclick.js',
             './assets/js/jquery-ui.min.js',
+            './assets/js/hamburger.js',
             './assets/js/main.map.min.js'
         ])
         .pipe(concat('production.map.min.js'))
+        .pipe(gulp.dest('./build/js'))
+    gulp.src([
+            'node_modules/jquery/dist/jquery.min.js',
+            './assets/js/flowtype.js',
+            //'./assets/js/fittext.js',
+            'node_modules/fastclick/lib/fastclick.js',
+            './assets/js/jquery-ui.min.js',
+            './assets/js/hamburger.js',
+            './assets/js/main.society.min.js'
+        ])
+        .pipe(concat('production.society.min.js'))
         .pipe(gulp.dest('./build/js'))
 });
 
@@ -177,17 +213,25 @@ gulp.task('images',function(){
 gulp.task('watch',function(){
     gulp.watch('./assets/css/*.sass',function(){
         runSequence(
-            'sass',
-            'concatcss'
+            'sass'
         )
+        setTimeout(function(){
+            runSequence(
+                'concatcss'
+            )
+        },1000);
     });
 });
 
 gulp.task('js',function() {
     runSequence(
-        'buildjs',
-        'concatjs'
+        'buildjs'
     )
+    setTimeout(function(){
+        runSequence(
+            'concatjs'
+        )
+    },2000);
 });
 
 gulp.task('build',['sass', 'concatcss','copy','js','images']);
