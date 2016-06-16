@@ -63,13 +63,14 @@
   bottom: 2em
   width: 30vw
   background: #fff
-  padding: 3em 2.5em 2.5em 2.5em
+  padding: 2em 1.5em 1.5em
   min-width: 450px
 
 .menu__item--map
   line-height: 3
   display: block
   position: relative
+  padding-right: 1.5em
 
 .menu__item--map + .menu__item--map
   border-top: 2px solid rgba(35, 34, 34, 0.05)
@@ -217,3 +218,51 @@
 
 .tabs__tab--active
   display: block
+
+.mCSB_scrollTools .mCSB_draggerContainer
+  right: -3em
+
+.map__control
+  display: none
+  position: absolute
+  left: 0
+  bottom: 0
+  width: 100%
+  height: 5em
+  background: #fff
+  z-index: 8
+
+.control__item
+  width: 50%
+  float: left
+  height: 5em
+  line-height: 5em
+  text-align: center
+
+.control__link
+  font-size: .85em
+  font-family: $gotham
+  text-transform: uppercase
+  font-weight: 500
+  width: 100%
+  height: 100%
+  display: block
+
+.control__item:nth-of-type(1)
+  border-right: 2px solid rgba(50, 34, 34, 0.3)
+
+@media screen and (max-width: 900px)
+  .map__control
+    display: block
+  .map__menu-wrap
+    display: none
+    min-width: 0
+  .map__menu-wrap--active
+    display: block
+    left: 1em
+    top: 1em
+    right: 1em
+    bottom: 6em
+    width: auto
+  .menu__item--inner
+    width: 100%
